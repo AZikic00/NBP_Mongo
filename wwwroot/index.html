@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Basketball Scout</title>
+</head>
+<body>
+    <div class="kluboviLiga">
+        <form class="navbar-form" id="kluboviLiga">
+                <div class="panel-heading">Klubovi</div>
+                <input list="LigeKlubovi" name="liga" class="dropdown">
+                <datalist id="LigeKlubovi">
+                </datalist>
+                <button class="btn" type="submit">Prikazi klubove</button>
+                <table id="kluboviLiga" class="table">
+                    <thead>
+                        <tr>
+                            <th>Naziv</th>
+                            <th>Drzava</th>
+                            <th>Godina osnivanja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+        </form>
+    </div>
+    <div class="statistika">
+        <form class="navbar-form" id="statistika">
+            <div class="tabela">
+                <div class="panel-heading">Igraci</div>
+                <input list="LigeStatistika" name="liga" class="dropdown">
+                <datalist id="LigeStatistika">
+                </datalist>
+                <input list="KluboviStatistika" name="klub" class="dropdown">
+                <datalist id="KluboviStatistika">
+                </datalist>
+                <input list="DrzaveStatistika" name="drzava" class="dropdown">
+                <datalist id="DrzaveStatistika">
+                </datalist>
+                <button class="btn" type="submit">Prikazi igrace</button>
+                <table id="statistika" class="table">
+                    <thead>
+                        <tr>
+                            <th>Klub</th>
+                            <th>Igrac</th>
+                            <th>Drzava</th>
+                            <th>Poeni</th>
+                            <th>Skokovi</th>
+                            <th>Asistencije</th>
+                            <th>Plata</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <div class="crud">
+        <form class="navbar-form" id="postIgrac">
+            <div id="input">
+                <label class="label">Ime:</label>
+                <input type="text" name="postIme" class="text">
+            </div>
+            <div id="input">
+                <label class="label">Drzava:</label>
+                <input type="text" name="postDrzava" class="text">
+            </div>
+            <div id="input">
+                <label class="label">Klub:</label>
+                <input list="postIgracKlub" name="postKlub" class="dropdown">
+                <datalist id="postIgracKlub">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Plata:</label>
+                <input type="text" name="postPlata"class="text">
+            </div>
+            <div id="btn">
+                <button class="btn btn-default" type="submit" id="post1input">Dodaj igraca</button>
+            </div>
+        </form>
+        <form class="navbar-form" id="postStatistika">
+            <div id="input">
+                <label class="label">Igrac:</label>
+                <input list="postStatistikaIgrac" name="postIgrac" class="dropdown">
+                <datalist id="postStatistikaIgrac">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Liga:</label>
+                <input list="postStatistikaLiga" name="postLiga" class="dropdown">
+                <datalist id="postStatistikaLiga">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Poeni:</label>
+                <input type="text" name="postPoeni"class="text">
+            </div>
+            <div id="input">
+                <label class="label">Skokovi:</label>
+                <input type="text" name="postSkokovi"class="text">
+            </div>
+            <div id="input">
+                <label class="label">Asistencije:</label>
+                <input type="text" name="postAsistencije"class="text">
+            </div>
+            <div id="btn">
+                <button class="btn btn-default" type="submit" id="post1input">Dodaj statistiku</button>
+            </div>
+        </form>
+        <form class="navbar-form" id="putPoeni">
+            <div id="input">
+                <label class="label">Igrac:</label>
+                <input list="putPoeniIgrac" name="putIgrac" class="dropdown">
+                <datalist id="putPoeniIgrac">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Liga:</label>
+                <input list="putPoeniLiga" name="putLiga" class="dropdown">
+                <datalist id="putPoeniLiga">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Poeni:</label>
+                <input type="text" name="putPoeni"class="text">
+            </div>
+            <div id="btn">
+                <button class="btn btn-default" type="submit" id="post1input">Izmeni poene</button>
+            </div>
+        </form>
+        <form class="navbar-form" id="putSkokovi">
+            <div id="input">
+                <label class="label">Igrac:</label>
+                <input list="putSkokoviIgrac" name="putIgrac" class="dropdown">
+                <datalist id="putSkokoviIgrac">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Liga:</label>
+                <input list="putSkokoviLiga" name="putLiga" class="dropdown">
+                <datalist id="putSkokoviLiga">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Skokovi:</label>
+                <input type="text" name="putSkokovi"class="text">
+            </div>
+            <div id="btn">
+                <button class="btn btn-default" type="submit" id="post1input">Izmeni skokove</button>
+            </div>
+        </form>
+        <form class="navbar-form" id="putAsistencije">
+            <div id="input">
+                <label class="label">Igrac:</label>
+                <input list="putAsistencijeIgrac" name="putIgrac" class="dropdown">
+                <datalist id="putAsistencijeIgrac">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Liga:</label>
+                <input list="putAsistencijeLiga" name="putLiga" class="dropdown">
+                <datalist id="putAsistencijeLiga">
+                </datalist>
+            </div>
+            <div id="input">
+                <label class="label">Asistencije:</label>
+                <input type="text" name="putAsistencije" class="text">
+            </div>
+            <div id="btn">
+                <button class="btn btn-default" type="submit" id="post1input">Izmeni asistencije</button>
+            </div>
+        </form>
+        <form class="navbar-form" id="deleteIgrac">
+            <div id="input">
+                <label class="label">Igrac:</label>
+                <input list="deleteIgracIgrac" name="deleteIgrac" class="dropdown">
+                <datalist id="deleteIgracIgrac">
+                </datalist>
+            </div>
+            <div id="btn">
+                <button class="btn btn-default" type="submit" id="post1input">Obrisi igraca</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <style type="text/css">
+        .statistika {
+            position: absolute;
+            padding:8px;
+            width: 49%;
+            right:0%;
+            top: 0;
+        }
+        .btn {
+            color: #ff7a00;
+            font-size: 15px;
+            border: 2px solid #ff9900;
+        }
+        .panel-heading {
+            background: #ff7a00;
+            color: #ffffff;
+            font-size: 20px;
+            text-align: center;
+        }
+        .table {
+            table-layout: auto;
+            width: 100%;
+            border: 1px solid #ff7a00;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #ff7a00;
+            padding: 0;
+            color: #ff7a00;
+        }
+        th {
+            border: 1px solid #ff7a00;
+            padding: 0;
+            color: #ff9900;
+        }
+        .kluboviLiga {
+            position: static;
+            width: 49%;
+            left: 0;
+            top: 0;
+        }
+        .crud {
+            position: static;
+            left: 0;
+        }
+        .dropdown{
+            color: #000000;
+            font-size: 15px;
+            border: 2px solid #ff7a00;
+            margin: 3px;
+        }
+        .text {
+            color: #000000;
+            font-size: 15px;
+            border: 2px solid #ff7a00;
+            margin: 3px;
+        }
+        .label {
+            color: #ff7a00;
+            font-size: 18px;
+        }
+    </style>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function sveLige() {
+            $.get("/sveLige",
+                function (data) {
+                    const t1 = $("datalist#LigeKlubovi").empty();
+                    const t2 = $("datalist#LigeStatistika").empty();
+                    const t3 = $("datalist#postStatistikaLiga").empty();
+                    const t4 = $("datalist#putPoeniLiga").empty();
+                    const t5 = $("datalist#putSkokoviLiga").empty();
+                    const t6 = $("datalist#putAsistencijeLiga").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (str) {
+                        $("<option>" + str + "</option>").appendTo(t1);
+                        $("<option>" + str + "</option>").appendTo(t2);
+                        $("<option>" + str + "</option>").appendTo(t3);
+                        $("<option>" + str + "</option>").appendTo(t4);
+                        $("<option>" + str + "</option>").appendTo(t5);
+                        $("<option>" + str + "</option>").appendTo(t6);
+                    });
+                }, "json");
+            return false;
+        }
+
+        function sviKlubovi() {
+            $.get("/sviKlubovi",
+                function (data) {
+                    const t1 = $("datalist#KluboviStatistika").empty();
+                    const t2 = $("datalist#postIgracKlub").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (str) {
+                        $("<option>" + str.naziv + "</option>").appendTo(t1);
+                        $("<option>" + str.naziv + "</option>").appendTo(t2);
+                    });
+                }, "json");
+            return false;
+        }
+
+        function sveDrzave() {
+            $.get("/sveDrzave",
+                function (data) {
+                    const t1 = $("datalist#DrzaveStatistika").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (str) {
+                        $("<option>" + str + "</option>").appendTo(t1);
+                    });
+                }, "json");
+            return false;
+        }
+
+        function sviIgraci() {
+            $.get("/sviIgraci",
+                function (data) {
+                    const t1 = $("datalist#postStatistikaIgrac").empty();
+                    const t2 = $("datalist#putPoeniIgrac").empty();
+                    const t3 = $("datalist#putSkokoviIgrac").empty();
+                    const t4 = $("datalist#putAsistencijeIgrac").empty();
+                    const t5 = $("datalist#deleteIgracIgrac").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (str) {
+                        $("<option>" + str.ime + "</option>").appendTo(t1);
+                        $("<option>" + str.ime + "</option>").appendTo(t2);
+                        $("<option>" + str.ime + "</option>").appendTo(t3);
+                        $("<option>" + str.ime + "</option>").appendTo(t4);
+                        $("<option>" + str.ime + "</option>").appendTo(t5);
+                    });
+                }, "json");
+            return false;
+        }
+
+        function kluboviLiga() {
+            var liga = $("#kluboviLiga").find("input[name=liga]").val();
+            if (liga == "") {
+                window.alert("Morate izabrati ligu");
+                return false;
+            }
+            $.get("/kluboviLiga/" + encodeURIComponent(liga),
+                function (data) {
+                    const t = $("table#kluboviLiga tbody").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (klub) {
+                        $("<tr><td class='kluboviLiga'>" + klub.naziv
+                            + "</td><td>" + klub.drzava
+                            + "</td><td>" + klub.godina_osnivanja
+                            + "</td></tr>").appendTo(t)
+                    });
+                }, "json");
+            return false;
+        }
+
+        function statistika() {
+            var liga = $("#statistika").find("input[name=liga]").val();
+            var klub = $("#statistika").find("input[name=klub]").val();
+            var drzava = $("#statistika").find("input[name=drzava]").val();
+            if (liga == "")
+            {
+                window.alert("Morate izabrati ligu");
+                return false;
+            }
+            if (klub == "" && drzava == "")
+            {
+                $.get("/statistikaLiga/" + encodeURIComponent(liga),
+                    function (data) {
+                        const t = $("table#statistika tbody").empty();
+                        if (!data || data.length == 0) return;
+                        data.forEach(function (statistika) {
+                            $("<tr><td class='kluboviLiga'>" + statistika.igrac.klub.naziv
+                                + "</td><td>" + statistika.igrac.ime
+                                + "</td><td>" + statistika.igrac.drzava
+                                + "</td><td>" + statistika.poeni
+                                + "</td><td>" + statistika.skokovi
+                                + "</td><td>" + statistika.asistencije
+                                + "</td><td>" + statistika.igrac.plata
+                                + "</td></tr>").appendTo(t)
+                        });
+                    }, "json");
+                return false;
+            }
+            if (klub == "" && drzava != "")
+            {
+                $.get("/statistikaDrzava/" + encodeURIComponent(liga) + "/" + encodeURIComponent(drzava),
+                    function (data) {
+                        const t = $("table#statistika tbody").empty();
+                        if (!data || data.length == 0) return;
+                        data.forEach(function (statistika) {
+                            $("<tr><td class='kluboviLiga'>" + statistika.igrac.klub.naziv
+                                + "</td><td>" + statistika.igrac.ime
+                                + "</td><td>" + statistika.igrac.drzava
+                                + "</td><td>" + statistika.poeni
+                                + "</td><td>" + statistika.skokovi
+                                + "</td><td>" + statistika.asistencije
+                                + "</td><td>" + statistika.igrac.plata
+                                + "</td></tr>").appendTo(t)
+                        });
+                    }, "json");
+                return false;
+            }
+            if (klub != "" && drzava == "") {
+                $.get("/statistikaKlub/" + encodeURIComponent(liga)+"/" + encodeURIComponent(klub),
+                    function (data) {
+                        const t = $("table#statistika tbody").empty();
+                        if (!data || data.length == 0) return;
+                        data.forEach(function (statistika) {
+                            $("<tr><td class='kluboviLiga'>" + statistika.igrac.klub.naziv
+                                + "</td><td>" + statistika.igrac.ime
+                                + "</td><td>" + statistika.igrac.drzava
+                                + "</td><td>" + statistika.poeni
+                                + "</td><td>" + statistika.skokovi
+                                + "</td><td>" + statistika.asistencije
+                                + "</td><td>" + statistika.igrac.plata
+                                + "</td></tr>").appendTo(t)
+                        });
+                    }, "json");
+                return false;
+            }
+            if (klub != "" && drzava != "") {
+                $.get("/statistika/" + encodeURIComponent(liga) + "/" + encodeURIComponent(klub) + "/" + encodeURIComponent(drzava),
+                    function (data) {
+                        const t = $("table#statistika tbody").empty();
+                        if (!data || data.length == 0) return;
+                        data.forEach(function (statistika) {
+                            $("<tr><td class='kluboviLiga'>" + statistika.igrac.klub.naziv
+                                + "</td><td>" + statistika.igrac.ime
+                                + "</td><td>" + statistika.igrac.drzava
+                                + "</td><td>" + statistika.poeni
+                                + "</td><td>" + statistika.skokovi
+                                + "</td><td>" + statistika.asistencije
+                                + "</td><td>" + statistika.igrac.plata
+                                + "</td></tr>").appendTo(t)
+                        });
+                    }, "json");
+                return false;
+            }
+            
+        }
+
+        function postIgrac() {
+            const query = $("#postIgrac").find("input[name=postIme]").val();
+            const query1 = $("#postIgrac").find("input[name=postDrzava]").val();
+            const query2 = $("#postIgrac").find("input[name=postKlub]").val();
+            const query3 = $("#postIgrac").find("input[name=postPlata]").val();
+            $.post("/dodajIgraca/" + encodeURIComponent(query) + "/" + encodeURIComponent(query1) + "/" + encodeURIComponent(query2) + "/" + encodeURIComponent(query3));
+        }
+
+        function postStatistika() {
+            const query = $("#postStatistika").find("input[name=postIgrac]").val();
+            const query1 = $("#postStatistika").find("input[name=postLiga]").val();
+            const query2 = $("#postStatistika").find("input[name=postPoeni]").val();
+            const query3 = $("#postStatistika").find("input[name=postSkokovi]").val();
+            const query4 = $("#postStatistika").find("input[name=postAsistencije]").val();
+            $.post("/dodajStatistiku/" + encodeURIComponent(query) + "/" + encodeURIComponent(query1) + "/" + encodeURIComponent(query2) + "/" + encodeURIComponent(query3) + "/" + encodeURIComponent(query4));
+        }
+
+        function putPoeni() {
+            const query = $("#putPoeni").find("input[name=putIgrac]").val();
+            const query1 = $("#putPoeni").find("input[name=putLiga]").val();
+            const query2 = $("#putPoeni").find("input[name=putPoeni]").val();
+            $.ajax({ type: 'PUT', url: '/izmeniPoene/' + encodeURIComponent(query) + "/" + encodeURIComponent(query1) + "/" + encodeURIComponent(query2) });
+        }
+
+        function putSkokovi() {
+            const query = $("#putSkokovi").find("input[name=putIgrac]").val();
+            const query1 = $("#putSkokovi").find("input[name=putLiga]").val();
+            const query2 = $("#putSkokovi").find("input[name=putSkokovi]").val();
+            $.ajax({ type: 'PUT', url: '/izmeniSkokove/' + encodeURIComponent(query) + "/" + encodeURIComponent(query1) + "/" + encodeURIComponent(query2) });
+        }
+
+        function putAsistencije() {
+            const query = $("#putAsistencije").find("input[name=putIgrac]").val();
+            const query1 = $("#putAsistencije").find("input[name=putLiga]").val();
+            const query2 = $("#putAsistencije").find("input[name=putAsistencije]").val();
+            $.ajax({ type: 'PUT', url: '/izmeniAsistencije/' + encodeURIComponent(query) + "/" + encodeURIComponent(query1) + "/" + encodeURIComponent(query2) });
+        }
+
+        function deleteIgrac() {
+            const query = $("#deleteIgrac").find("input[name=deleteIgrac]").val();
+            $.ajax({ type: 'DELETE', url: '/obrisiIgraca/' + encodeURIComponent(query) });
+        }
+
+        $("#postIgrac").submit(postIgrac);
+        $("#postStatistika").submit(postStatistika);
+        $("#putPoeni").submit(putPoeni);
+        $("#putSkokovi").submit(putSkokovi);
+        $("#putAsistencije").submit(putAsistencije);
+        $("#deleteIgrac").submit(deleteIgrac);
+        sveLige();
+        sviKlubovi();
+        sveDrzave();
+        sviIgraci()
+        $("#kluboviLiga").submit(kluboviLiga);
+        $("#statistika").submit(statistika);
+    </script>
+</body>
+</html>
